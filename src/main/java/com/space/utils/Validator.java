@@ -22,12 +22,12 @@ public class Validator {
 
     //checker`s
     public void checkName(String name) {
-        if (name == null || name.length() > 50 || StringUtils.isEmpty(name))
+        if (!StringUtils.hasLength(name) || name.length() > 50)
             throw new BadRequestException("incorrect Name");
     }
 
     public void checkPlanet(String planet) {
-        if (planet == null || planet.length() > 50 || StringUtils.isEmpty(planet))
+        if (!StringUtils.hasLength(planet) || planet.length() > 50)
             throw new BadRequestException("incorrect Planet");
     }
 
